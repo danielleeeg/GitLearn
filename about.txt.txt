@@ -1,0 +1,302 @@
+// USING GIT
+// DECLARING USERNAME AND EMAIL FOR GIT
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~
+$ git config --global user.name "Danielle Eeg"
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~
+$ git config --global user.email "daniellegeeg@gmail.com"
+
+
+// NAVIGATE TO FOLDER
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~
+$ cd Downloads
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads
+$ mkdir GitLearn
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads
+$ cd GitLearn
+
+
+// INITIALIZING GIT
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn
+$ git init
+Initialized empty Git repository in C:/Users/Danielle Eeg/Downloads/GitLearn/.git/
+
+// VIEW HIDDEN GIT F0LDER
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ ls -a
+./  ../  .git/
+
+
+// CHECK GIT STATUS
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+
+// CREATE NEW FILE
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ touch index.html
+
+// GIT STATUS -- SHOWS UNCOMMITTED FILE
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+// ADD FILE
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git add index.html
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+// COMMIT FILE
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git commit -m "Create index.html"
+[master (root-commit) eb63917] Create index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+// SHOW GIT LOG
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git log
+commit eb63917938e540a3aeafbc5c8bc7747d6eec981c (HEAD -> master)
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:05:58 2024 -0600
+
+    Create index.html
+
+
+// CREATE NEW FILES
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ touch app.js
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ touch styles.css
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app.js
+        styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git add index.html app.js
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   app.js
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        styles.css
+
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git commit -m "add app logic"
+[master 67b4799] add app logic
+ 2 files changed, 16 insertions(+)
+ create mode 100644 app.js
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git log
+commit 67b4799d412eca8d6c78c763e6b2ca701f49a872 (HEAD -> master)
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:09:49 2024 -0600
+
+    add app logic
+
+commit eb63917938e540a3aeafbc5c8bc7747d6eec981c
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:05:58 2024 -0600
+
+    Create index.html
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git add index.html styles.css
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git commit -m "added styles"
+[master 276ad86] added styles
+ 2 files changed, 8 insertions(+)
+ create mode 100644 styles.css
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git log
+commit 276ad86e3ec671864a7aa0a55da1d0c08c0711c4 (HEAD -> master)
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:12:04 2024 -0600
+
+    added styles
+
+commit 67b4799d412eca8d6c78c763e6b2ca701f49a872
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:09:49 2024 -0600
+
+    add app logic
+
+commit eb63917938e540a3aeafbc5c8bc7747d6eec981c
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:05:58 2024 -0600
+
+    Create index.html
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+// ADDING ALL UPDATED FILES TO GIT ADD
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git add .
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git commit -m "change styles"
+[master 606fb1b] change styles
+ 2 files changed, 30 insertions(+), 2 deletions(-)
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git log
+commit 606fb1bdaca8166136f448c36a1d5f5ee92bc263 (HEAD -> master)
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:15:00 2024 -0600
+
+    change styles
+
+commit 276ad86e3ec671864a7aa0a55da1d0c08c0711c4
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:12:04 2024 -0600
+
+    added styles
+
+commit 67b4799d412eca8d6c78c763e6b2ca701f49a872
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:09:49 2024 -0600
+
+    add app logic
+
+commit eb63917938e540a3aeafbc5c8bc7747d6eec981c
+Author: Danielle Eeg <daniellegeeg@gmail.com>
+Date:   Fri Feb 2 20:05:58 2024 -0600
+
+    Create index.html
+
+// REVERTING BACK TO A PREVIOUS COMMIT
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git checkout 67b4799d412eca8d6c78c763e6b2ca701f49a872
+Note: switching to '67b4799d412eca8d6c78c763e6b2ca701f49a872'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 67b4799 add app logic
+
+// LEAVING CURRENT BRANCH
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn ((67b4799...))
+$ git branch
+* (HEAD detached at 67b4799)
+  master
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn ((67b4799...))
+$ git status
+HEAD detached at 67b4799
+nothing to commit, working tree clean
+
+
+// CREATING A NEW BRANCH
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn ((67b4799...))
+$ git branch crazycolors
+
+// ENTERING NEW BRANCH
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn ((67b4799...))
+$ git checkout crazycolors
+Switched to branch 'crazycolors'
+
+
+// ENTERING MASTER BRANCH
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (crazycolors)
+$ git checkout master
+Switched to branch 'master'
+
+
+// MERGING 2 BRANCHES
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$ git merge crazycolors
+Already up to date.
+
+Danielle Eeg@DESKTOP-Q5L8OCB MINGW64 ~/Downloads/GitLearn (master)
+$
